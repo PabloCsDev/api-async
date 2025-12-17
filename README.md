@@ -1,8 +1,12 @@
 # 🚀 Sistema de Processamento Assíncrono com Retry e DLQ
 
-[![Java](https://img.shields.io/badge/Java-17-red.svg)](https://www.java.com/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-green.svg)](https://spring.io/projects/spring-boot)
-[![RabbitMQ](https://img.shields.io/badge/RabbitMQ-3.12-blue.svg)](https://www.rabbitmq.com/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
+  <img src="https://img.shields.io/badge/Spring_Boot-3.2-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot 3.2">
+  <img src="https://img.shields.io/badge/RabbitMQ-3.12-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ 3.12">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven">
+</p>
 
 Sistema robusto de processamento assíncrono com mecanismos de retentativa automática e Dead Letter Queue para mensagens com falha.
 
@@ -24,23 +28,27 @@ DLQ (em caso de falha)
 ## 🚀 Começando Rápido
 
 ### Pré-requisitos
+
 - Java 17+
 - Maven 3.8+
 - Docker e Docker Compose
 
 ### 1. Iniciar RabbitMQ
+
 ```bash
 docker-compose up -d
-
-### 2. Compilar e executar
-bash
+```
+2. Compilar e executar
+```
 ./mvnw clean compile
 ./mvnw spring-boot:run
-### 3. Testar a API
-bash
+```
+3. Testar a API
+```
 curl -X POST http://localhost:8080/api/messages \
   -H "Content-Type: application/json" \
   -d "Mensagem de teste"
+```
 ### 📊 Monitoramento
 RabbitMQ Management: http://localhost:15672 (guest/guest)
 
@@ -50,7 +58,7 @@ Health Check: http://localhost:8080/actuator/health
 
 ### 🔧 Configuração
 Arquivo application.yml
-yaml
+```
 server:
   port: 8080
 
@@ -68,6 +76,7 @@ spring:
           initial-interval: 1000ms
           multiplier: 2
           max-interval: 10000ms
+```
 ### Política de Retry
 1ª tentativa: Imediata
 
@@ -78,7 +87,7 @@ spring:
 Após 3 falhas: Mensagem enviada para DLQ
 
 ### 📁 Estrutura do Projeto
-text
+```
 src/main/java/com/hyus4ki/asyncpro/
 ├── AsyncProApplication.java      # Classe principal
 ├── config/
@@ -94,6 +103,7 @@ src/main/java/com/hyus4ki/asyncpro/
 └── service/
     ├── MessageProcessorService.java # Lógica de processamento
     └── DLQService.java           # Serviço de DLQ
+```
 ### 🧪 Testando Resiliência
 O sistema inclui simulação de erro (30% chance) para testar:
 
@@ -104,13 +114,14 @@ Roteamento para DLQ
 Logging de erros
 
 ### 🔍 Exemplo de Logs
-json
+```
 {
   "@timestamp": "2025-12-17T02:42:20.425Z",
   "message": "Processando mensagem: 62d493f9-73aa-49c2-af3f-c186ecc04e18",
   "level": "INFO",
   "application": "async-pro"
 }
+```
 ### 🛠 Para Produção
 Recomendações adicionais:
 
@@ -124,7 +135,8 @@ Adicionar alertas para crescimento da DLQ
 
 Configurar backup dos logs
 
-### Desenvolvido com ❤️ e ☕ por Pablo Carvalho 
+### Desenvolvido com ❤️ e ☕ por Pablo Carvalho
 
-📧 Contato: devpablocarvalho@gamil.com
+📧 Contato: devpablocarvalho@gmail.com
 🔗 LinkedIn: www.linkedin.com/in/pablo-carvalho-140255260
+
