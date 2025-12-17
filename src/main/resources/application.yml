@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: async-pro
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 1000ms
+          multiplier: 2
+          max-interval: 10000ms
+server:
+  port: 8080
+logging:
+  level:
+    com.hyus4ki.asyncpro: INFO
+    org.springframework.amqp: WARN
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  health:
+    rabbit:
+      enabled: true
