@@ -1,27 +1,14 @@
 # 🚀 Sistema de Processamento Assíncrono com Retry e DLQ
-<p align="center">
-  <img alt="Java"
-       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-       width="70" height="70" />
 
-  <img alt="Spring Boot"
-       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-       width="70" height="70" />
-
-  <img alt="RabbitMQ"
-       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg"
-       width="70" height="70" />
-
-  <img alt="Docker"
-       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-       width="70" height="70" />
-
-  <img alt="Maven"
-       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
-       width="70" height="70" />
-</p>
-
-
+<table align="center">
+  <tr>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="70"/></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="70"/></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg" width="70"/></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="70"/></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" width="70"/></td>
+  </tr>
+</table>
 
 Sistema robusto de processamento assíncrono com mecanismos de retentativa automática e Dead Letter Queue para mensagens com falha.
 
