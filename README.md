@@ -31,23 +31,24 @@ DLQ (em caso de falha)
 ### 1. Iniciar RabbitMQ
 ```bash
 docker-compose up -d
-2. Compilar e executar
+
+### 2. Compilar e executar
 bash
 ./mvnw clean compile
 ./mvnw spring-boot:run
-3. Testar a API
+### 3. Testar a API
 bash
 curl -X POST http://localhost:8080/api/messages \
   -H "Content-Type: application/json" \
   -d "Mensagem de teste"
-📊 Monitoramento
+### 📊 Monitoramento
 RabbitMQ Management: http://localhost:15672 (guest/guest)
 
 Logs da aplicação: logs/application.log (formato JSON)
 
 Health Check: http://localhost:8080/actuator/health
 
-🔧 Configuração
+### 🔧 Configuração
 Arquivo application.yml
 yaml
 server:
@@ -67,7 +68,7 @@ spring:
           initial-interval: 1000ms
           multiplier: 2
           max-interval: 10000ms
-Política de Retry
+### Política de Retry
 1ª tentativa: Imediata
 
 2ª tentativa: 1 segundo depois
@@ -76,7 +77,7 @@ Política de Retry
 
 Após 3 falhas: Mensagem enviada para DLQ
 
-📁 Estrutura do Projeto
+### 📁 Estrutura do Projeto
 text
 src/main/java/com/hyus4ki/asyncpro/
 ├── AsyncProApplication.java      # Classe principal
@@ -93,7 +94,7 @@ src/main/java/com/hyus4ki/asyncpro/
 └── service/
     ├── MessageProcessorService.java # Lógica de processamento
     └── DLQService.java           # Serviço de DLQ
-🧪 Testando Resiliência
+### 🧪 Testando Resiliência
 O sistema inclui simulação de erro (30% chance) para testar:
 
 Retry automático
@@ -102,7 +103,7 @@ Roteamento para DLQ
 
 Logging de erros
 
-🔍 Exemplo de Logs
+### 🔍 Exemplo de Logs
 json
 {
   "@timestamp": "2025-12-17T02:42:20.425Z",
@@ -110,7 +111,7 @@ json
   "level": "INFO",
   "application": "async-pro"
 }
-🛠 Para Produção
+### 🛠 Para Produção
 Recomendações adicionais:
 
 Configurar credenciais seguras do RabbitMQ
@@ -123,7 +124,7 @@ Adicionar alertas para crescimento da DLQ
 
 Configurar backup dos logs
 
-Desenvolvido com ❤️ e ☕ por Pablo Carvalho 
+### Desenvolvido com ❤️ e ☕ por Pablo Carvalho 
 
 📧 Contato: devpablocarvalho@gamil.com
 🔗 LinkedIn: www.linkedin.com/in/pablo-carvalho-140255260
