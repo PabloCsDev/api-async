@@ -1,12 +1,44 @@
 # 🚀 Sistema de Processamento Assíncrono com Retry e DLQ
+<p align="center" style="display: flex; gap: 20px; flex-wrap: wrap;">
+  
+  <img
+    alt="Java"
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+    width="70"
+    height="70"
+  />
+  
+  <img
+    alt="Spring Boot"
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+    width="70"
+    height="70"
+  />
+  
+  <img
+    alt="RabbitMQ"
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg"
+    width="70"
+    height="70"
+  />
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
-  <img src="https://img.shields.io/badge/Spring_Boot-3.2-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot 3.2">
-  <img src="https://img.shields.io/badge/RabbitMQ-3.12-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ 3.12">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-  <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven">
+  <img
+    alt="Docker"
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+    width="80"
+    height="70"
+  />
+  
+  <img
+    alt="Maven"
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
+    width="70"
+    height="70"
+  />
+
 </p>
+
+
 
 Sistema robusto de processamento assíncrono com mecanismos de retentativa automática e Dead Letter Queue para mensagens com falha.
 
@@ -38,12 +70,12 @@ DLQ (em caso de falha)
 ```bash
 docker-compose up -d
 ```
-2. Compilar e executar
+### 2. Compilar e executar
 ```
 ./mvnw clean compile
 ./mvnw spring-boot:run
 ```
-3. Testar a API
+### 3. Testar a API
 ```
 curl -X POST http://localhost:8080/api/messages \
   -H "Content-Type: application/json" \
