@@ -124,18 +124,6 @@ Logging de erros
   "application": "async-pro"
 }
 ```
-### 🛠 Para Produção
-Recomendações adicionais:
-
-Configurar credenciais seguras do RabbitMQ
-
-Implementar autenticação na API
-
-Configurar monitoramento (Prometheus + Grafana)
-
-Adicionar alertas para crescimento da DLQ
-
-Configurar backup dos logs
 
 ### Desenvolvido com ❤️ e ☕ por Pablo Carvalho
 
